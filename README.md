@@ -7,14 +7,10 @@ This project demonstrate on full stack app development with Frontend in Next JS 
 Once forked / cloned, spin up Postgres DB docker container;
 
 ```
-docker-compose up -d
+make
 ```
 
-Now, install dependencies for frontend and backend apps by moving to respective folders and run below command.
-
-```
-npm i
-```
+optional: configure .env
 
 ### See project in action
 
