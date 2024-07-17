@@ -4,6 +4,8 @@ services:
   postgres:
     container_name: postgres
     image: postgres:latest
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
     restart: always
     env_file: .env
     ports:
@@ -13,14 +15,15 @@ services:
     networks:
       - be_network
   be:
-    container_name: postgres
-    image: postgres:latest
+    container_name: be
     restart: always
-    env_file: .env
+    depends_on:
+      - postgres
+    env_file: ./backend/.env
+    build:
+      context: ./backend
     ports:
-      - "5432:5432"
-    volumes:
-      - ./db/pgData:/var/lib/postgresql/data
+      - "9898:9898"
     networks:
       - be_network
 networks:

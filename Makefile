@@ -1,12 +1,12 @@
 -include .env
 
-.PHONY: init
+.PHONY: init build up db-dev be-dev
 
 all: init build
 
-init:; npm i
+init :; npm i
 
-build: docker compose build
+build :; docker compose build
 
 up :;  docker compose up -d && docker compose logs -f
 
