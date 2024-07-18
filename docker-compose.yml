@@ -19,9 +19,11 @@ services:
     restart: always
     depends_on:
       - postgres
-    env_file: ./backend/.env
+    env_file: ./packages/backend/.env
+    environment:
+      PORT: 9898
     build:
-      context: ./backend
+      context: ./packages/backend
     ports:
       - "9898:9898"
     networks:

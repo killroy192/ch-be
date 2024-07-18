@@ -1,0 +1,40 @@
+type Student {
+  id: ID!
+  name: String!
+  second_name: String!
+  email: String!
+  age: Int!
+  grade: Int!
+}
+
+input NewStudent {
+  name: String!
+  second_name: String!
+  email: String!
+  age: Int!
+  grade: Int!
+}
+
+input UpdateStudent {
+  id: ID!
+  name: String!
+  second_name: String!
+  email: String!
+  age: Int!
+  grade: Int!
+}
+
+type Query {
+  students: [Student!]!
+  student(id: ID!): Student
+}
+
+type Mutation {
+  createStudent(input: NewStudent!): Student!
+  updateStudent(input: UpdateStudent!): Student
+  deleteStudent(id: ID!): Student
+}
+
+type Subscription {
+  studentCreated: Student
+}

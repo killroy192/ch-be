@@ -2,7 +2,7 @@
 
 .PHONY: init build up db-dev be-dev
 
-all: init build
+all: init
 
 init :; npm i
 

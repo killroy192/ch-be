@@ -1,11 +1,17 @@
 {
   "name": "challenge-jtj",
   "version": "1.0.0",
-  "description": "[![Technologies](https://skillicons.dev/icons?i=typescript,react,redux,mui,nestjs,graphql,postgres,docker)](https://skillicons.dev)",
+  "description": "challenge-jtj",
   "main": "index.js",
   "author": "",
   "license": "ISC",
+  "workspaces": [
+    "packages/backend"
+  ],
   "devDependencies": {
     "@nestjs/cli": "^10.4.2"
+  },
+  "dependencies": {
+    "@nestjs/config": "^3.2.3"
   }
 }
