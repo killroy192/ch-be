@@ -12,6 +12,7 @@
     "@nestjs/cli": "^10.4.2"
   },
   "dependencies": {
-    "@nestjs/config": "^3.2.3"
+    "@nestjs/config": "^3.2.3",
+    "create-next-app": "^14.2.5"
   }
 }

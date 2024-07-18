@@ -9,12 +9,12 @@ const pubSub = new PubSub();
 export class StudentResolvers {
   constructor(private readonly studentService: StudentService) {}
 
-  @Query('posts')
+  @Query('students')
   async posts(): Promise<Student[]> {
     return this.studentService.findAll();
   }
 
-  @Query('post')
+  @Query('student')
   async post(@Args('id') args: string): Promise<Student> {
     return this.studentService.findOne(args);
   }
@@ -36,8 +36,8 @@ export class StudentResolvers {
     return this.studentService.delete(args);
   }
 
-  @Subscription('postCreated')
+  @Subscription('studentCreated')
   postCreated() {
-    return pubSub.asyncIterator('postCreated');
+    return pubSub.asyncIterator('studentCreated');
   }
 }
