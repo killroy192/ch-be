@@ -20,7 +20,7 @@ USER node
 WORKDIR /home/node
 
 COPY package*.json ./
-RUN npm ci
+RUN npm i
 
 COPY --chown=node:node . .
 RUN npm run build && npm prune --omit=dev
