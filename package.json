@@ -6,7 +6,8 @@
   "author": "",
   "license": "ISC",
   "workspaces": [
-    "packages/backend"
+    "packages/backend",
+    "packages/fe"
   ],
   "devDependencies": {
     "@nestjs/cli": "^10.4.2"
